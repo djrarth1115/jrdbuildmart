@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JRD BuildMart - A Shopee Affiliate Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
     }
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gray-900 text-white">
 
   <!-- ✅ Sticky Header -->
   <header class="sticky top-0 z-50 bg-gray-950 bg-opacity-90 backdrop-blur border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
+      <div class="text-left">
+        <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
+        <p class="text-sm text-gray-400 -mt-1">A Shopee Affiliate Shop</p>
+      </div>
       <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-300">
         <a href="#hero" class="hover:text-orange-400">Home</a>
         <a href="#categories" class="hover:text-orange-400">Categories</a>
