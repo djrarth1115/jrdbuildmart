@@ -14,6 +14,17 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -39,8 +50,8 @@
 
   <section id="hero" class="bg-gray-900 bg-cover bg-center p-8 md:p-20" style="background-image: url('https://i.ibb.co/GvxzXKJm/PROFESSIONAL-TOOLS-FOR-EVERY-PROJECT-Quality-hardware-and-electrical-tools-for-DIYers-and-profession.png');">
     <div class="bg-black bg-opacity-60 p-8 md:p-12 rounded-xl max-w-5xl mx-auto">
-      <div class="text-left">
-        <h2 class="text-4xl md:text-6xl font-extrabold text-orange-500">JRD BuildMart</h2>
+      <div class="text-left fade-in">
+        <h2 class="text-4xl md:text-6xl font-extrabold text-orange-500 uppercase">JRD BUILDMART</h2>
         <p class="text-xl mt-2 text-gray-300">A Shopee Affiliate Shop</p>
         <p class="mt-4 max-w-2xl text-gray-300">Your go-to source for top-quality hardware and electrical tools, trusted by DIYers and homeowners.</p>
         <a href="https://shopee.ph" target="_blank" class="inline-block mt-6 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-bold transition">
