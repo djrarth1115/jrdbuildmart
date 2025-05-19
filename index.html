@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JRD BuildMart - A Shopee Affiliate Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Anton', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
     .fade-in {
       opacity: 0;
@@ -72,7 +72,6 @@
       <button onclick="filterProducts('testers')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">🔍 Electrical Testers</button>
       <button onclick="filterProducts('sockets')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">🔩 Sockets</button>
       <button onclick="filterProducts('repair-kits')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">🧰 Repair Kits</button>
-      <button onclick="resetFilter()" class="bg-gray-600 p-4 rounded-xl hover:bg-orange-400 hover:text-white col-span-2 md:col-span-1">🔄 Show All</button>
     </div>
   </section>
 
@@ -143,34 +142,12 @@
 
   <!-- ✅ JavaScript: Filter Logic -->
 
-  <button onclick="scrollToTop()" id="backToTop" class="fixed bottom-5 right-5 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-full shadow-lg hidden">↑ Top</button>
-
   <script>
     function filterProducts(category) {
       const allCards = document.querySelectorAll(".product-card");
-      const allButtons = document.querySelectorAll("#categories button");
-
       allCards.forEach(card => card.classList.add("hidden"));
       document.querySelectorAll(`.product-card.${category}`).forEach(card => card.classList.remove("hidden"));
-
-      allButtons.forEach(btn => btn.classList.remove("bg-orange-500", "text-white"));
-      event.target.classList.add("bg-orange-500", "text-white");
-
       document.getElementById("products").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function resetFilter() {
-      document.querySelectorAll(".product-card").forEach(card => card.classList.remove("hidden"));
-      document.querySelectorAll("#categories button").forEach(btn => btn.classList.remove("bg-orange-500", "text-white"));
-      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
-    }
-
-    window.onscroll = function () {
-      document.getElementById("backToTop").style.display = window.scrollY > 300 ? "block" : "none";
-    };
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
