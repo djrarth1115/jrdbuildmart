@@ -34,6 +34,37 @@
         <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
         <p class="text-sm text-gray-400 -mt-1">A Shopee Affiliate Shop</p>
       </div>
+      <!-- Header with Hamburger Menu -->
+<header class="sticky top-0 z-50 bg-gray-950 bg-opacity-90 backdrop-blur border-b border-gray-800">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <div>
+      <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
+      <p class="text-sm text-gray-400 -mt-1">A Shopee Affiliate Shop</p>
+    </div>
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-300">
+      <a href="#hero" class="hover:text-orange-400">Home</a>
+      <a href="#categories" class="hover:text-orange-400">Categories</a>
+      <a href="#products" class="hover:text-orange-400">Featured</a>
+      <a href="#testimonials" class="hover:text-orange-400">Testimonials</a>
+    </nav>
+    <!-- Hamburger Icon -->
+    <button id="hamburger-btn" class="md:hidden flex flex-col items-center justify-center w-10 h-10 focus:outline-none" aria-label="Open Menu">
+      <span class="block w-7 h-1 mb-1 bg-orange-500 rounded transition-all"></span>
+      <span class="block w-7 h-1 mb-1 bg-orange-500 rounded transition-all"></span>
+      <span class="block w-7 h-1 bg-orange-500 rounded transition-all"></span>
+    </button>
+  </div>
+  <!-- Mobile Nav Menu (hidden by default) -->
+  <nav id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-950 bg-opacity-95 backdrop-blur flex flex-col items-center justify-center gap-8 text-lg font-semibold text-gray-200 transition-all duration-300 opacity-0 pointer-events-none z-50">
+    <a href="#hero" class="hover:text-orange-400" onclick="toggleMenu()">Home</a>
+    <a href="#categories" class="hover:text-orange-400" onclick="toggleMenu()">Categories</a>
+    <a href="#products" class="hover:text-orange-400" onclick="toggleMenu()">Featured</a>
+    <a href="#testimonials" class="hover:text-orange-400" onclick="toggleMenu()">Testimonials</a>
+    <button onclick="toggleMenu()" class="mt-8 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-bold">Close</button>
+  </nav>
+</header>
+
       <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-300">
         <a href="#hero" class="hover:text-orange-400">Home</a>
         <a href="#categories" class="hover:text-orange-400">Categories</a>
@@ -87,7 +118,7 @@
       <button onclick="filterProducts('solar-kits')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">SOLAR KITS</button>
       <button onclick="filterProducts('electricals')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ELECTRICALS</button>
       <button onclick="filterProducts('home-repairs')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">HOME REPAIRS</button>
-      <button onclick="filterProducts('accesories')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ACCESSORIES</button>
+      <button onclick="filterProducts('accessories')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ACCESSORIES</button>
     </div>
   </section>
 
@@ -95,87 +126,82 @@
     <h2 class="text-3xl font-bold text-center mb-10">FEATURED PRODUCTS</h2>
     <div id="product-list" class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="product-card power-tools bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://i.ibb.co/5g7tZSLK/ph-11134207-7qul4-ljp45c5r3yp82b.webp" class="rounded-lg mb-4">
+        <img src="https://i.ibb.co/5g7tZSLK/ph-11134207-7qul4-ljp45c5r3yp82b.webp" alt="Cordless Power Drill" class="rounded-lg mb-4">
         <h3 class="text-lg font-semibold">Cordless Power Drill</h3>
         <p class="text-sm text-gray-400">Perfect for quick repairs and installs.</p>
         <p class="text-sm text-orange-400 font-bold mt-2">₱1,099.00</p>
         <a href="https://s.shopee.ph/2LLq8CVLML" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
       </div>
       <div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
-        <img src="https://i.ibb.co/Z1zYfm17/ph-11134207-7rask-m7apz86n93zm40.webp" class="rounded-lg mb-4">
+        <img src="https://i.ibb.co/Z1zYfm17/ph-11134207-7rask-m7apz86n93zm40.webp" alt="LAIRTPOW MPPT Solar Controller" class="rounded-lg mb-4">
         <h3 class="text-lg font-semibold">LAIRTPOW MPPT Solar Controller</h3>
         <p class="text-sm text-gray-400">AUTO Battery Charger with LCD</p>
         <p class="text-sm text-orange-400 font-bold mt-2">₱1,150.00</p>
         <a href="https://s.shopee.ph/9KVdRkogsL" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
       </div>
       <div class="product-card electricals bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://i.ibb.co/kg5xtsDw/1cf2c68dc37062c9dd665fded079aa92.webp" class="rounded-lg mb-4">
+        <img src="https://i.ibb.co/kg5xtsDw/1cf2c68dc37062c9dd665fded079aa92.webp" alt="Digital Clamp Meter Multi Tester" class="rounded-lg mb-4">
         <h3 class="text-lg font-semibold">Digital Clamp Meter Multi Tester</h3>
         <p class="text-sm text-gray-400">AC Current Multimeter DC/AC Voltage Ammeter Voltages Tester</p>
         <p class="text-sm text-orange-400 font-bold mt-2">₱390.00</p>
         <a href="https://s.shopee.ph/8zsmyiUzeL" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
       </div>
       <div class="product-card home-repairs bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://i.ibb.co/1GrprXZq/ph-11134207-7rasa-m6c0shjtlttvee.webp" class="rounded-lg mb-4">
+        <img src="https://i.ibb.co/1GrprXZq/ph-11134207-7rasa-m6c0shjtlttvee.webp" alt="Household Socket Wrench Tool Set 67Pcs" class="rounded-lg mb-4">
         <h3 class="text-lg font-semibold">Household Socket Wrench Tool Set 67Pcs</h3>
         <p class="text-sm text-gray-400">Hardware Hand Tool Kit for Decoration Maintenance</p>
         <p class="text-sm text-orange-400 font-bold mt-2">₱1,690.00</p>
         <a href="https://s.shopee.ph/1LTLqUScsK" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
       </div>
-         <div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
-  <img src="https://i.ibb.co/xKBf2b0M/f867f3832ff0e85a3ecf4882e63b17d9.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">MPPT/PWM Auto Solar Charge Controller 10A-100A</h3>
-  <p class="text-sm text-gray-400">LCD Dual USB 5V Solar Panel Battery Charge Regulator</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱1,850.00</p>
-  <a href="https://s.shopee.ph/7KkZ1JdnVZ" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-
-<div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
-  <img src="https://i.ibb.co/gMCJm9z8/ph-11134207-7qukz-lhii3dgq5e5jce.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">12V 8AH/20HR Shiwei Storage Battery UPS</h3>
-  <p class="text-sm text-gray-400">12V 8Ah 20hr Rechargeable Valve Battery</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱2,400.00</p>
-  <a href="https://s.shopee.ph/1Vmm56Hrra" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-
-<div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
-  <img src="https://i.ibb.co/VWGt6dWR/ph-11134207-7rasd-m0fkcdukofvy10.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">SOLAR PANEL 150watts MONOCRYSTALLINE</h3>
-  <p class="text-sm text-gray-400">High-efficiency solar panel for your energy needs.</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱6,950.00</p>
-  <a href="https://s.shopee.ph/1Vmm5NKh4l" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-   <div class="product-card accesories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
-  <img src="https://i.ibb.co/RGx82BQv/ph-11134207-7rasi-m6mfh4qhpiprd7.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">Men's Steel Toe Safety Shoes</h3>
-  <p class="text-sm text-gray-400">Puncture Resistant Labor Shoes for Men</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱1,499.00</p>
-  <a href="https://s.shopee.ph/8zsn1xozfD" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-
-<div class="product-card accesories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
-  <img src="https://i.ibb.co/rRMfz3Yp/38df5c5d4f0ea2ece448300bff38758d.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">Waterproof Safety Shoes/Boots</h3>
-  <p class="text-sm text-gray-400">Lightweight and Breathable Steel Toe Cap Work Shoes</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱1,299.00</p>
-  <a href="https://s.shopee.ph/7fNPRbaBU2" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-
-<div class="product-card accesories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
-  <img src="https://i.ibb.co/S4c9jxRH/ph-11134207-7qul6-lfifgcjlqino53.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">Heavy Duty Safety Construction Helmet</h3>
-  <p class="text-sm text-gray-400">Hard Hat Construction Safety Equipment</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱450.00</p>
-  <a href="https://s.shopee.ph/1g6CIg3KhA" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>
-
-<div class="product-card accesories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="400">
-  <img src="https://i.ibb.co/394SvxN8/sg-11134201-22120-a2ainn80dplvfb.webp" class="rounded-lg mb-4">
-  <h3 class="text-lg font-semibold">Thick Construction Gloves</h3>
-  <p class="text-sm text-gray-400">Rubber Industrial Gloves (1 Pair)</p>
-  <p class="text-sm text-orange-400 font-bold mt-2">₱250.00</p>
-  <a href="https://s.shopee.ph/3LEQHtWshO" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-</div>   
+      <div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://i.ibb.co/xKBf2b0M/f867f3832ff0e85a3ecf4882e63b17d9.webp" alt="MPPT/PWM Auto Solar Charge Controller" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">MPPT/PWM Auto Solar Charge Controller 10A-100A</h3>
+        <p class="text-sm text-gray-400">LCD Dual USB 5V Solar Panel Battery Charge Regulator</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱1,850.00</p>
+        <a href="https://s.shopee.ph/7KkZ1JdnVZ" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://i.ibb.co/gMCJm9z8/ph-11134207-7qukz-lhii3dgq5e5jce.webp" alt="12V 8AH/20HR Shiwei Storage Battery UPS" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">12V 8AH/20HR Shiwei Storage Battery UPS</h3>
+        <p class="text-sm text-gray-400">12V 8Ah 20hr Rechargeable Valve Battery</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱2,400.00</p>
+        <a href="https://s.shopee.ph/1Vmm56Hrra" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card solar-kits bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://i.ibb.co/VWGt6dWR/ph-11134207-7rasd-m0fkcdukofvy10.webp" alt="SOLAR PANEL 150watts MONOCRYSTALLINE" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">SOLAR PANEL 150watts MONOCRYSTALLINE</h3>
+        <p class="text-sm text-gray-400">High-efficiency solar panel for your energy needs.</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱6,950.00</p>
+        <a href="https://s.shopee.ph/1Vmm5NKh4l" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card accessories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://i.ibb.co/RGx82BQv/ph-11134207-7rasi-m6mfh4qhpiprd7.webp" alt="Men's Steel Toe Safety Shoes" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Men's Steel Toe Safety Shoes</h3>
+        <p class="text-sm text-gray-400">Puncture Resistant Labor Shoes for Men</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱1,499.00</p>
+        <a href="https://s.shopee.ph/8zsn1xozfD" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card accessories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://i.ibb.co/rRMfz3Yp/38df5c5d4f0ea2ece448300bff38758d.webp" alt="Waterproof Safety Shoes/Boots" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Waterproof Safety Shoes/Boots</h3>
+        <p class="text-sm text-gray-400">Lightweight and Breathable Steel Toe Cap Work Shoes</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱1,299.00</p>
+        <a href="https://s.shopee.ph/7fNPRbaBU2" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card accessories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://i.ibb.co/S4c9jxRH/ph-11134207-7qul6-lfifgcjlqino53.webp" alt="Heavy Duty Safety Construction Helmet" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Heavy Duty Safety Construction Helmet</h3>
+        <p class="text-sm text-gray-400">Hard Hat Construction Safety Equipment</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱450.00</p>
+        <a href="https://s.shopee.ph/1g6CIg3KhA" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+      <div class="product-card accessories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://i.ibb.co/394SvxN8/sg-11134201-22120-a2ainn80dplvfb.webp" alt="Thick Construction Gloves" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Thick Construction Gloves</h3>
+        <p class="text-sm text-gray-400">Rubber Industrial Gloves (1 Pair)</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱250.00</p>
+        <a href="https://s.shopee.ph/3LEQHtWshO" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>   
     </div>
     <div class="text-center mt-10">
       <a href="https://shopee.ph/jrd.buildmart" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg">View More Products</a>
@@ -200,7 +226,7 @@
     function filterProducts(category) {
       const allCards = document.querySelectorAll(".product-card");
       allCards.forEach(card => card.classList.add("hidden"));
-      document.querySelectorAll(.product-card.${category}).forEach(card => card.classList.remove("hidden"));
+      document.querySelectorAll(`.product-card.${category}`).forEach(card => card.classList.remove("hidden"));
       document.getElementById("products").scrollIntoView({ behavior: "smooth" });
     }
 
@@ -209,6 +235,23 @@
       document.getElementById("products").scrollIntoView({ behavior: "smooth" });
     }
   </script>
+
+  <script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  function toggleMenu() {
+    if (mobileMenu.classList.contains('opacity-0')) {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden'; // Prevent scroll on open
+    } else {
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+  }
+
+  hamburgerBtn.addEventListener('click', toggleMenu);
+</script>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
