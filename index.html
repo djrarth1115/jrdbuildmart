@@ -54,15 +54,22 @@
       </nav>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden absolute top-0 left-0 w-full bg-gray-950 bg-opacity-90 text-white shadow-lg hidden">
-      <div class="flex flex-col items-center py-4">
-        <a href="#hero" class="py-2 hover:text-orange-400">Home</a>
-        <a href="#categories" class="py-2 hover:text-orange-400">Categories</a>
-        <a href="#products" class="py-2 hover:text-orange-400">Featured</a>
-        <a href="#testimonials" class="py-2 hover:text-orange-400">Testimonials</a>
-      </div>
-    </div>
+    <!-- Mobile Menu: Left-Aligned Menu with Close Button at Top-Right -->
+<div id="mobile-menu" class="md:hidden absolute top-0 left-0 w-full bg-gray-950 bg-opacity-90 text-white shadow-lg hidden z-40">
+  <div class="flex justify-end px-6 pt-4">
+    <button id="close-menu" class="text-orange-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="flex flex-col items-start px-6 py-4 space-y-3 text-sm font-semibold">
+    <a href="#hero" class="hover:text-orange-400">Home</a>
+    <a href="#categories" class="hover:text-orange-400">Categories</a>
+    <a href="#products" class="hover:text-orange-400">Featured</a>
+    <a href="#testimonials" class="hover:text-orange-400">Testimonials</a>
+  </div>
+</div>
   </header>
 
   <section id="hero" class="bg-gray-900 bg-cover bg-center p-8 md:p-20" style="background-image: url('https://i.ibb.co/GvxzXKJm/PROFESSIONAL-TOOLS-FOR-EVERY-PROJECT-Quality-hardware-and-electrical-tools-for-DIYers-and-profession.png');" data-aos="fade-up">
@@ -214,14 +221,21 @@
   </footer>
 
   <script>
-    // Toggle the mobile menu visibility
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const mobileMenu = document.getElementById('mobile-menu');
+   <script>
+  // Toggle the mobile menu visibility
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
 
-    hamburgerIcon.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+  hamburgerIcon.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
+
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
