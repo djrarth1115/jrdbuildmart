@@ -34,43 +34,32 @@
         <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
         <p class="text-sm text-gray-400 -mt-1">A Shopee Affiliate Shop</p>
       </div>
-      <!-- Header with Hamburger Menu -->
-<header class="sticky top-0 z-50 bg-gray-950 bg-opacity-90 backdrop-blur border-b border-gray-800">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <div>
-      <h1 class="text-xl md:text-2xl font-bold text-orange-500">JRD BuildMart</h1>
-      <p class="text-sm text-gray-400 -mt-1">A Shopee Affiliate Shop</p>
-    </div>
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-300">
-      <a href="#hero" class="hover:text-orange-400">Home</a>
-      <a href="#categories" class="hover:text-orange-400">Categories</a>
-      <a href="#products" class="hover:text-orange-400">Featured</a>
-      <a href="#testimonials" class="hover:text-orange-400">Testimonials</a>
-    </nav>
-    <!-- Hamburger Icon -->
-    <button id="hamburger-btn" class="md:hidden flex flex-col items-center justify-center w-10 h-10 focus:outline-none" aria-label="Open Menu">
-      <span class="block w-7 h-1 mb-1 bg-orange-500 rounded transition-all"></span>
-      <span class="block w-7 h-1 mb-1 bg-orange-500 rounded transition-all"></span>
-      <span class="block w-7 h-1 bg-orange-500 rounded transition-all"></span>
-    </button>
-  </div>
-  <!-- Mobile Nav Menu (hidden by default) -->
-  <nav id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-gray-950 bg-opacity-95 backdrop-blur flex flex-col items-center justify-center gap-8 text-lg font-semibold text-gray-200 transition-all duration-300 opacity-0 pointer-events-none z-50">
-    <a href="#hero" class="hover:text-orange-400" onclick="toggleMenu()">Home</a>
-    <a href="#categories" class="hover:text-orange-400" onclick="toggleMenu()">Categories</a>
-    <a href="#products" class="hover:text-orange-400" onclick="toggleMenu()">Featured</a>
-    <a href="#testimonials" class="hover:text-orange-400" onclick="toggleMenu()">Testimonials</a>
-    <button onclick="toggleMenu()" class="mt-8 px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-bold">Close</button>
-  </nav>
-</header>
+      <!-- Hamburger Menu for Mobile -->
+      <div class="md:hidden flex items-center">
+        <button id="hamburger-icon" class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
 
+      <!-- Navigation Links (Desktop View) -->
       <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-300">
         <a href="#hero" class="hover:text-orange-400">Home</a>
         <a href="#categories" class="hover:text-orange-400">Categories</a>
         <a href="#products" class="hover:text-orange-400">Featured</a>
         <a href="#testimonials" class="hover:text-orange-400">Testimonials</a>
       </nav>
+
+      <!-- Mobile Menu (Initially Hidden) -->
+      <div id="mobile-menu" class="md:hidden absolute top-20 left-0 w-full bg-gray-950 bg-opacity-90 border-t border-gray-800 hidden">
+        <nav class="flex flex-col text-sm font-semibold text-gray-300 py-4">
+          <a href="#hero" class="hover:text-orange-400 py-2 px-4">Home</a>
+          <a href="#categories" class="hover:text-orange-400 py-2 px-4">Categories</a>
+          <a href="#products" class="hover:text-orange-400 py-2 px-4">Featured</a>
+          <a href="#testimonials" class="hover:text-orange-400 py-2 px-4">Testimonials</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -208,7 +197,7 @@
     </div>
   </section>
 
-  <section id="testimonials" class="py-16 px-6 md:px-20 bg-gray-800" data-aos="fade-up">
+   <section id="testimonials" class="py-16 px-6 md:px-20 bg-gray-800" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-center mb-10 text-white">WHAT OUR CUSTOMER SAY</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-300">
       <div class="bg-gray-700 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">⭐️⭐️⭐️⭐️⭐️ <br/>“Tools arrived fast and they’re super durable! Highly recommend JRD BuildMart!” — <b>Marco L.</b></div>
@@ -223,35 +212,14 @@
   </footer>
 
   <script>
-    function filterProducts(category) {
-      const allCards = document.querySelectorAll(".product-card");
-      allCards.forEach(card => card.classList.add("hidden"));
-      document.querySelectorAll(`.product-card.${category}`).forEach(card => card.classList.remove("hidden"));
-      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function showAllProducts() {
-      document.querySelectorAll(".product-card").forEach(card => card.classList.remove("hidden"));
-      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
-    }
+    // Hamburger Menu Toggle
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    hamburgerIcon.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
   </script>
-
-  <script>
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  function toggleMenu() {
-    if (mobileMenu.classList.contains('opacity-0')) {
-      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-      document.body.style.overflow = 'hidden'; // Prevent scroll on open
-    } else {
-      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-      document.body.style.overflow = '';
-    }
-  }
-
-  hamburgerBtn.addEventListener('click', toggleMenu);
-</script>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
