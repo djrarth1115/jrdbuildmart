@@ -109,7 +109,7 @@
       <button onclick="filterProducts('solar-kits')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">SOLAR KITS</button>
       <button onclick="filterProducts('electricals')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ELECTRICALS</button>
       <button onclick="filterProducts('home-repairs')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">HOME REPAIRS</button>
-      <button onclick="filterProducts('accesories')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ACCESSORIES</button>
+      <button onclick="filterProducts('accessories')" class="bg-gray-700 p-4 rounded-xl hover:bg-orange-500 hover:text-white">ACCESSORIES</button>
     </div>
   </section>
 
@@ -227,6 +227,27 @@
   <script>
     AOS.init({ once: true, duration: 1000, easing: 'ease-in-out' });
   </script>
+
+  <script>
+  function filterProducts(category) {
+    const products = document.querySelectorAll('.product-card');
+    products.forEach((product) => {
+      if (product.classList.contains(category)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+  }
+
+  function showAllProducts() {
+    const products = document.querySelectorAll('.product-card');
+    products.forEach((product) => {
+      product.style.display = 'block';
+    });
+  }
+</script>
+
 
 </body>
 </html>
