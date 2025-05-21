@@ -1,9 +1,6 @@
 {
-  "functions": {
-    "source": "functions"
-  },
   "hosting": {
-    "public": "build",
+    "public": "jrarth",
     "ignore": [
       "firebase.json",
       "**/.*",
