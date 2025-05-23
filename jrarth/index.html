@@ -206,10 +206,33 @@
         <p class="text-sm text-gray-400">Powerful Industrial Angle Grinder and Steel Grinding Disc</p>
         <p class="text-sm text-orange-400 font-bold mt-2">₱450.00</p>
         <a href="https://s.shopee.ph/20j4RbzRno" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
-      </div>   
+      </div> 
+<div class="product-card power-tools bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://i.ibb.co/4RGyQdgv/ph-11134207-7rasl-m2uuuzu2i30r06.webp" alt="BOSCH 688V Drill Cordless Set Drill" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">BOSCH 688V Drill Cordless Set Drill</h3>
+        <p class="text-sm text-gray-400"> Battery Hand Impact Drill</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱1290.00</p>
+        <a href="https://s.shopee.ph/3LEVCjIirY" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+<div class="product-card accessories bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://i.ibb.co/ns0qVg5M/ph-11134207-7ras9-m643d0ekld3i73.webp" alt="Bosch 30pcs X-Line Set " class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Bosch 30pcs X-Line Set </h3>
+        <p class="text-sm text-gray-400">Accessories for Drill</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱949.00</p>
+        <a href="https://s.shopee.ph/2VfODYmLMV" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>
+<div class="product-card power-tools bg-gray-800 rounded-xl p-4" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://i.ibb.co/RpWc7XBD/ph-11134207-7rasb-m5wkim2xie8e85.webp" alt="Bosch GSB 180-18V Cordless Impact Drill" class="rounded-lg mb-4">
+        <h3 class="text-lg font-semibold">Bosch GSB 180-18V Cordless Impact Drill</h3>
+        <p class="text-sm text-gray-400">with 41pc. Accessories Set with Free Bosch Fisherman's Box</p>
+        <p class="text-sm text-orange-400 font-bold mt-2">₱10500.00</p>
+        <a href="https://s.shopee.ph/10qaROLAJ8" target="_blank" class="bg-orange-600 hover:bg-orange-700 inline-block mt-2 px-4 py-2 text-sm font-bold text-white rounded">Buy on Shopee</a>
+      </div>      
     </div>
     <div class="text-center mt-10">
-      <a href="https://shopee.ph/jrd.buildmart" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg">View More Products</a>
+      <button onclick="showAllProductsAndScroll()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-lg">
+  View More Products
+</button>
     </div>
   </section>
 
@@ -265,6 +288,13 @@
     products.forEach((product) => {
       product.style.display = 'block';
     });
+  }
+</script>
+
+<script>
+  function showAllProductsAndScroll() {
+    showAllProducts(); // Show all products
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to products
   }
 </script>
 
